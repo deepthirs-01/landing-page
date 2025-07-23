@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 20px;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      transition: background-color 0.4s ease;
+      z-index: 999;
+    }
+
+    nav.scrolled {
+      background-color: #333333;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background: lightseagreen;
+      border-radius: 5px;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(to right, red, black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    section {
+      padding: 100px 20px;
+      background: #f9f9f9;
+      min-height: 100vh;
+    }
+
+    section h2 {
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home">
+    <h1>Welcome to SkillCraft Landing Page</h1>
+  </header>
+
+  <section id="features">
+    <h2>Features</h2>
+    <p>This page has a cool, sticky nav bar that reacts to your scroll and mouse!</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We love designing responsive and beautiful websites.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Let’s build something amazing together.</p>
+  </section>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
